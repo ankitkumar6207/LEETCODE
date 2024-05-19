@@ -1,24 +1,28 @@
+// time complexity: O(n)
+// space complexity: O(1);
 class Solution {
     public boolean isPalindrome(int x) {
-        int reverse=0;
         if(x<0)
         {
             return false;
         }
-        for(int i=x ;i>0;i=i/10)
+        int rev = 0;
+        int temp = x;
+        while(temp!=0)
         {
-            reverse = reverse*10+(i%10);
+            int digit = temp %10;
+            rev = rev*10+digit;
+            temp = temp/10;
         }
-
-        if(x == reverse)
+        if(rev == x)
         {
             return true;
         }
-        else{
-            return false;
+        else
+        {
+        return false;
         }
-       
-
+      
         
     }
 }
