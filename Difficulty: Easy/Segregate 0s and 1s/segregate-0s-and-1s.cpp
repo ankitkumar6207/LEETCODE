@@ -9,15 +9,14 @@ using namespace std;
 
 class Solution {
   public:
-   void segregate0and1(vector<int> &arr) {
-        int i = 0, j = arr.size()-1;
+    void segregate0and1(vector<int> &arr) {
+        // code here
+        int i=0,j=arr.size()-1;
         
         while(i<j){
-            if(arr[i]){
-                swap(arr[i],arr[j]);
-                j--;
-            }
-            else i++;
+            while(i<j and arr[i]==0)i++;
+            while(i<j and arr[j]==1)j--;
+            swap(arr[i],arr[j]);
         }
     }
 };
